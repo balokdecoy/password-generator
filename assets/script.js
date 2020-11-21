@@ -17,52 +17,7 @@ Step 2 will need to accept true/false inputs and combine logic with the numerica
 Once the inputs have been combined, randomize (probably Math.floor(Math.Step1())?, something like that?)
 based on criteria and display password in text box. */
 
-
-var charNumber = 0;
-var confNumbers = 0;
-var specialChar = 0;
-var lowerLetter = 0;
-var upperLetter = 0;
-
-var generateBtn = document.querySelector("#generate");
-
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-  
-  passwordText.value = password;
-
-  function generatePassword() {
-    alert("Welcome to the Password Generator!");
-    while (charNumber = prompt("How many characters should your password be? (At least 8, no more than 128.)")) {
-      if (isNaN(charNumber) || charNumber < 8 || charNumber > 128) { 
-        alert("Please pick a numerical digit between 8 and 128.");
-        generatePassword();
-      }
-      else { 
-        console.log(charNumber);
-        var specialChar = confirm("Would you like special characters?");
-        if (specialChar === true) {
-          specialChar = 1;
-          console.log(specialChar);
-          break;
-        }
-        else {
-        specialChar = 0;
-        console.log(specialChar);
-        break;
-        }
-      }
-    }
-  }
-}
-
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword); {
-    
-}
+/*.concat */
 
 var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 
@@ -72,12 +27,85 @@ var lettersLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", 
 var lettersUpper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S",
 "T", "U", "V", "W", "X", "Y", "Z"];
 
-var specialChar = ['\u0021', '\u0022', '\u0023', '\u0024', '\u0025', '\u0026', '\u0027', '\u0028', '\u0029',
+var unicode = ['\u0021', '\u0022', '\u0023', '\u0024', '\u0025', '\u0026', '\u0027', '\u0028', '\u0029',
 '\u002a', '\u002b', '\u002c', '\u002d', '\u002e', '\u002f', '\u003a', '\u003b', '\u003c', '\u003d', '\u003e',
 '\u003f', '\u0040', '\u005b', '\u005c', '\u005d', '\u005e', '\u005f', '\u0060', '\u007b', '\u007c', '\u007d',
 '\u007e'];
 
+var userPassword = [];
+
 console.log(lettersLower);
 console.log(lettersUpper);
 console.log(numbers);
-console.log(specialChar);
+console.log(unicode);
+console.log(userPassword);
+
+/*var charNumber = 0;
+var confNumbers = true;
+var specialChar = true;
+var lowerLetter = true;
+var upperLetter = true;*/
+
+var generateBtn = document.querySelector("#generate"); 
+
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+  
+  passwordText.value = password;
+
+  function generatePassword() {
+    var charNumber = prompt(
+      "Enter a password character length between 8 and 128.")
+    if (isNaN(charNumber) || charNumber < 8 || charNumber > 128) {
+      alert("Please pick a numerical digit between 8 and 128.");
+    }
+    else {
+      charNumber.concat(userPassword);
+    }
+    var confNumbers = confirm("Would you like numbers in your password?");
+    if (confNumbers === true) {
+      console.log(confNumbers);
+    }
+    else {
+      confNumbers = false;
+      console.log(confNumbers);
+    }
+
+    var specialChar = confirm("Would you like special characters in your password?");
+    if (specialChar === true) {
+      console.log(specialChar);
+    }
+    else {
+      specialChar = false;
+      console.log(specialChar);
+    }
+
+    var lowerLetter = confirm("Would you like lower-case letters in your password?");
+    if (lowerLetter === true) {
+      console.log(lowerLetter);
+    }
+    else {
+      lowerLetter = false;
+      console.log(lowerLetter);
+    }
+
+    var upperLetter = confirm("Would you like upper-case letters in your password?");
+    if (upperLetter === true) {
+      console.log(upperLetter);
+    }
+    else {
+      upperLetter = false;
+      console.log(upperLetter);
+    }
+
+  }
+  
+}
+
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword); {
+    
+}
