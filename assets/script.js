@@ -1,4 +1,29 @@
 // Assignment Code
+
+/* Assignment requires password prompts and confirmations to acquire user inputs. 
+Required user inputs: 
+1. How many characters?
+  a. Is the user entry valid? If not, restart the loop.
+  b. If the entry is valid, store the entry and move to the next prompt.
+2. CONFIRM:
+  a. Do you want special characters? Boolean t/f
+  b. Do you want uppercase letters? Boolean t/f
+  c. Do you want lowercase letters? Boolean t/f
+  d. Do you want numbers? Boolean t/f 
+Step 2 does not require a loop restart for invalid entries, since it is a Yes/No confirm popup.
+
+Step 2 will need to accept true/false inputs and combine logic with the numerical input from Step 1. 
+
+Once the inputs have been combined, randomize (probably Math.floor(Math.Step1())?, something like that?)
+based on criteria and display password in text box. */
+
+
+var charNumber = 0;
+var confNumbers = 0;
+var specialChar = 0;
+var lowerLetter = 0;
+var upperLetter = 0;
+
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
@@ -10,12 +35,29 @@ function writePassword() {
 
   function generatePassword() {
     alert("Welcome to the Password Generator!");
-    var charNumber = prompt("How many characters should your password be? (At least 8, no more than 128.)");
-    if (isNaN(charNumber) || (charNumber > 128) || (charNumber < 8)) { 
-      alert("Please pick a numerical digit between 8 and 128.")
+    while (charNumber = prompt("How many characters should your password be? (At least 8, no more than 128.)")) {
+      if (isNaN(charNumber) || charNumber < 8 || charNumber > 128) { 
+        alert("Please pick a numerical digit between 8 and 128.");
+        generatePassword();
+      }
+      else { 
+        console.log(charNumber);
+        var specialChar = confirm("Would you like special characters?");
+        if (specialChar === true) {
+          specialChar = 1;
+          console.log(specialChar);
+          break;
+        }
+        else {
+        specialChar = 0;
+        console.log(specialChar);
+        break;
+        }
+      }
     }
   }
 }
+
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword); {
