@@ -39,7 +39,7 @@ If user selects a number less than 8 or greater than 128, or enters a character 
 
 If user selects a valid number but enters false for all of the password parameters, user is alerted to select at least one password element and text box displays the same message.
 
-Once the user successfully runs the program and is given a password, the password array is reset so the user can rerun the program with a fresh password array without having to refresh the page. 
+Once the user successfully runs the program and is given a password, the password array is reset so the user can rerun the program with a fresh password array without having to refresh the page. This refresh can be seen in the console log at line 120 after running the program. 
 
 [Acknowledgments]
 
@@ -52,6 +52,6 @@ Thanks to Saveliy Samoylov for feedback and clarification on true/false conditio
 Thanks to Amir Ashtiany, Young Ji Kim, Beatrice Ellingson, and Frankie Rosado for their feedback, support, and brainstorming. Visit their Github pages here: 
 
 1. Amir Ashtiany - https://github.com/Alexfit4 
-2. Young Ji Kim - 
+2. Young Ji Kim - https://github.com/youjmi 
 3. Beatrice Ellingson - 
 4. Frankie Rosado - https://github.com/Franciscorosado09  
