@@ -111,6 +111,8 @@ function writePassword() {
     }
     else {
       alert("Please choose a number between 8 and 128.");
+      passwordText = "Please choose a number between 8 and 128.";
+      return passwordText;
     }
   }
   // Reset the password array so user can rerun the program with a fresh array without having to refresh the page
