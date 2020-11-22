@@ -94,7 +94,9 @@ function writePassword() {
       console.log(passwordArr);
 
       if (confNumbers === false && confSpecial === false && confUpper === false && confLower === false) {
-        alert("You must choose at least 1 password element.");
+        alert("Please choose at least 1 password element.");
+        passwordText = "Please choose at least 1 password element.";
+        return passwordText;
       }
       else {
         var passwordText = "";
