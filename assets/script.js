@@ -24,7 +24,7 @@ console.log(numbers);
 console.log(unicode);
 console.log(passwordArr);
 
-//Pull generate button tag from html file
+// Pull generate button tag from html file
 var generateBtn = document.querySelector("#generate"); 
 
 // Write password to the #password input
@@ -39,13 +39,15 @@ function writePassword() {
     alert("Welcome to the Password Generator!");
     // Asks user for their desired password length. Used later in code as iteration number for password array loop
     var charNumber = prompt("Enter a password character length between 8 and 128.");
+
+    // Parse integer so user's string-based entry becomes a number that can be used later in for loop iterations
     charNumber = parseInt(charNumber);
     console.log(charNumber);
 
-    // If else function ensuring user input is valid. 
+    // If else statement ensuring user input is valid
     if (typeof charNumber == "number" && charNumber <= 128 && charNumber >= 8) {
       var confNumbers = confirm("Do you want numbers in your password?");
-      //Concatenate the numbers array to the password array if user selects true
+      // Concatenate numbers array to the password array if user selects true
       if (confNumbers === true) {
         passwordArr = passwordArr.concat(numbers);
         console.log(passwordArr);
@@ -54,7 +56,7 @@ function writePassword() {
         confNumbers === false;
       }
 
-      //Concatenate unicode array to the password array if user selects true
+      // Concatenate unicode array to the password array if user selects true
       var confSpecial = confirm("Do you want special characters in your password?");
       if (confSpecial === true) {
         passwordArr = passwordArr.concat(unicode);
@@ -64,7 +66,7 @@ function writePassword() {
         confSpecial === false;
       }
 
-      //Concatenate uppercase letters array to the password array if user selects true
+      // Concatenate uppercase letters array to the password array if user selects true
       var confUpper = confirm("Do you want uppercase letters in your password?");
       if (confUpper === true) {
         passwordArr = passwordArr.concat(lettersUpper);
@@ -74,7 +76,7 @@ function writePassword() {
         confUpper === false;
       }
 
-      //Concatenate lowercase letters array to the password array if user selects true
+      // Concatenate lowercase letters array to the password array if user selects true
       var confLower = confirm("Do you want lowercase letters in your password?");
       if (confLower === true) {
         passwordArr = passwordArr.concat(lettersLower);
@@ -94,15 +96,15 @@ function writePassword() {
         return passwordText;
       }
 
-      // If user input is valid, run loop grabbing a character from the password array at random and write result to the password text box
+      // If user input is valid, run loop grabbing a character from the password array at random and write result to password text
       else {
         var passwordText = "";
-        for (var i = 0; i < charNumber; i++) {
+        for (var index = 0; index < charNumber; index++) {
           var charSelect = Math.floor(Math.random() * passwordArr.length);
           passwordText += passwordArr[charSelect];
         }
         
-        // Return password text to the HTML document
+        // Return completed password text to the document text box
         console.log(passwordText);
         return passwordText;
       }
@@ -113,6 +115,7 @@ function writePassword() {
   }
   // Reset the password array so user can rerun the program with a fresh array without having to refresh the page
   passwordArr = [];
+  console.log(passwordArr);
 }
 
 // Add event listener to generate button
