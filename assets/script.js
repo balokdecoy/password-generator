@@ -40,7 +40,7 @@ function writePassword() {
     // Asks user for their desired password length. Used later in code as iteration number for password array loop
     var charNumber = prompt("Enter a password character length between 8 and 128.");
 
-    // Parse integer so user's string-based entry becomes a number that can be used later in for loop iterations
+    // Parse integer so user's string-based entry becomes a number that can be used later in loop iterations
     charNumber = parseInt(charNumber);
     console.log(charNumber);
 
