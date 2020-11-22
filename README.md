@@ -51,7 +51,7 @@ Thanks to Saveliy Samoylov for feedback and clarification on true/false conditio
 
 Thanks to Amir Ashtiany, Young Ji Kim, Beatrice Ellingson, and Frankie Rosado for their feedback, support, and brainstorming. Visit their Github pages here: 
 
-Amir Ashtiany - https://github.com/Alexfit4 
-Young Ji Kim - 
-Beatrice Ellingson - 
-Frankie Rosado - https://github.com/Franciscorosado09  
+1. Amir Ashtiany - https://github.com/Alexfit4 
+2. Young Ji Kim - 
+3. Beatrice Ellingson - 
+4. Frankie Rosado - https://github.com/Franciscorosado09  
