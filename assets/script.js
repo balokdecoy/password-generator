@@ -50,6 +50,7 @@ function writePassword() {
   passwordText.value = password;
 
   function generatePassword() {
+    alert("Welcome to the Password Generator!");
     var charNumber = prompt("Enter a password character length between 8 and 128.");
     charNumber = parseInt(charNumber);
     console.log(charNumber);
