@@ -3,9 +3,20 @@ Browser application that creates a randomly generated password according to user
 
 This project is a password generator that runs in the browser. Extrapolated from HTML/CSS starter code.
 
+
 [Project Links]
 
+Deployed application: https://balokdecoy.github.io/password-generator/ 
+
+Github repo: https://github.com/balokdecoy/password-generator 
+
+
 [Project Screenshots]
+
+![Password Generator initial](./assets/screenshots/password-generator-clean.png)
+
+![Password Generator run](./assets/screenshots/password-generator-run.png)
+
 
 [User Instructions and Program Logic]
 
@@ -20,6 +31,7 @@ User selections are concatenated to a password array.
 Program loops through the modified password array as many times as the password length request, pulling a random character from the array each time. 
 
 Compiled password is displayed in the text box. 
+
 
 [Input Validation]
 
