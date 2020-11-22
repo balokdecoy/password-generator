@@ -40,3 +40,18 @@ If user selects a number less than 8 or greater than 128, or enters a character 
 If user selects a valid number but enters false for all of the password parameters, user is alerted to select at least one password element and text box displays the same message.
 
 Once the user successfully runs the program and is given a password, the password array is reset so the user can rerun the program with a fresh password array without having to refresh the page. 
+
+[Acknowledgments]
+
+The HTML and CSS are starter code provided by GWU. Project goal entails fleshing out the Javascript file with appropriate logical conditions and events to write password text to the HTML text box. 
+
+Thanks to Gabe Perry for clarification on the for loop structure and concat() function. 
+
+Thanks to Saveliy Samoylov for feedback and clarification on true/false conditions in user inputs. 
+
+Thanks to Amir Ashtiany, Young Ji Kim, Beatrice Ellingson, and Frankie Rosado for their feedback, support, and brainstorming. Visit their Github pages here: 
+
+Amir Ashtiany - https://github.com/Alexfit4 
+Young Ji Kim - 
+Beatrice Ellingson - 
+Frankie Rosado - https://github.com/Franciscorosado09  
