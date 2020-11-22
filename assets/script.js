@@ -83,8 +83,8 @@ function writePassword() {
       else {
         var passwordText = "";
         for (var i = 0; i < charNumber; i++) {
-          var rand = Math.floor(Math.random() * passwordArr.length);
-          passwordText += passwordArr[rand];
+          var charSelect = Math.floor(Math.random() * passwordArr.length);
+          passwordText += passwordArr[charSelect];
         }
         console.log(passwordText);
         return passwordText;
