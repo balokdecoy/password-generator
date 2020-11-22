@@ -1,24 +1,5 @@
 // Assignment Code
 
-/* Assignment requires password prompts and confirmations to acquire user inputs. 
-Required user inputs: 
-1. How many characters?
-  a. Is the user entry valid? If not, restart the loop.
-  b. If the entry is valid, store the entry and move to the next prompt.
-2. CONFIRM:
-  a. Do you want special characters? Boolean t/f
-  b. Do you want uppercase letters? Boolean t/f
-  c. Do you want lowercase letters? Boolean t/f
-  d. Do you want numbers? Boolean t/f 
-Step 2 does not require a loop restart for invalid entries, since it is a Yes/No confirm popup.
-
-Step 2 will need to accept true/false inputs and combine logic with the numerical input from Step 1. 
-
-Once the inputs have been combined, randomize (probably Math.floor(Math.Step1())?, something like that?)
-based on criteria and display password in text box. */
-
-/*.concat() */
-
 var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 
 var lettersLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s",
