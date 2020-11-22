@@ -17,9 +17,9 @@ Step 2 will need to accept true/false inputs and combine logic with the numerica
 Once the inputs have been combined, randomize (probably Math.floor(Math.Step1())?, something like that?)
 based on criteria and display password in text box. */
 
-/*.concat */
+/*.concat() */
 
-var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 
 var lettersLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s",
 "t", "u", "v", "w", "x", "y", "z"];
@@ -32,19 +32,13 @@ var unicode = ['\u0021', '\u0022', '\u0023', '\u0024', '\u0025', '\u0026', '\u00
 '\u003f', '\u0040', '\u005b', '\u005c', '\u005d', '\u005e', '\u005f', '\u0060', '\u007b', '\u007c', '\u007d',
 '\u007e'];
 
-var userPassword = [];
+var passwordArr = [];
 
 console.log(lettersLower);
 console.log(lettersUpper);
 console.log(numbers);
 console.log(unicode);
-console.log(userPassword);
-
-/*var charNumber = 0;
-var confNumbers = true;
-var specialChar = true;
-var lowerLetter = true;
-var upperLetter = true;*/
+console.log(passwordArr);
 
 var generateBtn = document.querySelector("#generate"); 
 
@@ -56,54 +50,67 @@ function writePassword() {
   passwordText.value = password;
 
   function generatePassword() {
-    var charNumber = prompt(
-      "Enter a password character length between 8 and 128.")
-    if (isNaN(charNumber) || charNumber < 8 || charNumber > 128) {
-      alert("Please pick a numerical digit between 8 and 128.");
-    }
-    else {
-      charNumber.concat(userPassword);
-    }
-    var confNumbers = confirm("Would you like numbers in your password?");
-    if (confNumbers === true) {
-      console.log(confNumbers);
-    }
-    else {
-      confNumbers = false;
-      console.log(confNumbers);
-    }
+    var charNumber = prompt("Enter a password character length between 8 and 128.");
+    charNumber = parseInt(charNumber);
+    console.log(charNumber);
 
-    var specialChar = confirm("Would you like special characters in your password?");
-    if (specialChar === true) {
-      console.log(specialChar);
+    if (typeof charNumber == "number" && charNumber <= 128 && charNumber >= 8) {
+      var confNumbers = confirm("Do you want numbers in your password?");
+      if (confNumbers === true) {
+        passwordArr = passwordArr.concat(numbers);
+        console.log(passwordArr);
+      }
+      else {
+        confNumbers === false;
+      }
+
+      var confSpecial = confirm("Do you want special characters in your password?");
+      if (confSpecial === true) {
+        passwordArr = passwordArr.concat(unicode);
+        console.log(passwordArr);
+      }
+      else {
+        confSpecial === false;
+      }
+
+      var confUpper = confirm("Do you want uppercase letters in your password?");
+      if (confUpper === true) {
+        passwordArr = passwordArr.concat(lettersUpper);
+        console.log(passwordArr);
+      }
+      else {
+        confUpper === false;
+      }
+
+      var confLower = confirm("Do you want lowercase letters in your password?");
+      if (confLower === true) {
+        passwordArr = passwordArr.concat(lettersLower);
+        console.log(passwordArr);
+      }
+      else {
+        confLower === false;
+      }
+
+      console.log(passwordArr);
+
+      if (confNumbers === false && confSpecial === false && confUpper === false && confLower === false) {
+        alert("You must choose at least 1 password element.");
+      }
+      else {
+        var passwordText = "";
+        for (var i = 0; i < charNumber; i++) {
+          var rand = Math.floor(Math.random() * passwordArr.length);
+          passwordText += passwordArr[rand];
+        }
+        console.log(passwordText);
+        return passwordText;
+      }
     }
     else {
-      specialChar = false;
-      console.log(specialChar);
+      alert("Please choose a number between 8 and 128.");
     }
-
-    var lowerLetter = confirm("Would you like lower-case letters in your password?");
-    if (lowerLetter === true) {
-      console.log(lowerLetter);
-    }
-    else {
-      lowerLetter = false;
-      console.log(lowerLetter);
-    }
-
-    var upperLetter = confirm("Would you like upper-case letters in your password?");
-    if (upperLetter === true) {
-      console.log(upperLetter);
-    }
-    else {
-      upperLetter = false;
-      console.log(upperLetter);
-    }
-
   }
-  
 }
-
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword); {
