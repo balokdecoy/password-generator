@@ -53,5 +53,5 @@ Thanks to Amir Ashtiany, Young Ji Kim, Beatrice Ellingson, and Frankie Rosado fo
 
 1. Amir Ashtiany - https://github.com/Alexfit4 
 2. Young Ji Kim - https://github.com/youjmi 
-3. Beatrice Ellingson - 
+3. Beatrice Ellingson - https://github.com/beatricellingson 
 4. Frankie Rosado - https://github.com/Franciscorosado09  
